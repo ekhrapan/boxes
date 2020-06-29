@@ -23,7 +23,7 @@ public class App {
 
     public static void print(Box box) {
         if (box != null) {
-            System.out.println("Box volume = " + box.volume());
+            System.out.println("Box volume = " + box.calculateVolume());
         } else {
             System.out.println("Box is null");
         }

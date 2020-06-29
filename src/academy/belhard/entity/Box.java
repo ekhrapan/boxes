@@ -18,7 +18,7 @@ public class Box {
         BoxCounterUtil.plusBox();
     }
 
-    public int volume() {
+    public int calculateVolume() {
         int volume = height * width * length;
 
         return volume;
