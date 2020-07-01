@@ -3,17 +3,14 @@ package academy.belhard.entity;
 import academy.belhard.util.BoxCounterUtil;
 
 public class Box {
-    private int height;
-    private int width;
-    private int length;
-    private BoxColor color;
-    private String title;
+    protected int height;
+    protected int width;
+    protected int length;
 
-    public Box(int height, int width, int length, BoxColor color) {
+    public Box(int height, int width, int length) {
         this.height = height;
         this.width = width;
         this.length = length;
-        this.color = color;
 
         BoxCounterUtil.plusBox();
     }
@@ -24,15 +21,9 @@ public class Box {
         return volume;
     }
 
-    public BoxColor getColor() {
-        return color;
-    }
+    public int calculateVolume(int multiplier) {
+        int volume = height * width * length * multiplier * multiplier * multiplier;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+        return volume;
     }
 }
