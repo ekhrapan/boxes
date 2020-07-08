@@ -2,7 +2,9 @@ package academy.belhard.entity;
 
 import academy.belhard.util.BoxCounterUtil;
 
-public class Box {
+import java.util.Objects;
+
+public class Box extends Container {
     protected int height;
     protected int width;
     protected int length;
@@ -15,15 +17,32 @@ public class Box {
         BoxCounterUtil.plusBox();
     }
 
-    public int calculateVolume() {
-        int volume = height * width * length;
-
-        return volume;
+    @Override
+    public int getVolume() {
+        return height * width * length;
     }
 
-    public int calculateVolume(int multiplier) {
-        int volume = height * width * length * multiplier * multiplier * multiplier;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Box)) return false;
+        Box box = (Box) o;
+        return height == box.height &&
+                width == box.width &&
+                length == box.length;
+    }
 
-        return volume;
+    @Override
+    public int hashCode() {
+        return Objects.hash(height, width, length);
+    }
+
+    @Override
+    public String toString() {
+        return "Box{" +
+                "height: " + height +
+                ", width: " + width +
+                ", length: " + length +
+                '}';
     }
 }

@@ -9,8 +9,8 @@ public class TitledBox extends Box {
     }
 
     @Override
-    public int calculateVolume() {
-        int volume = super.calculateVolume();
+    public int getVolume() {
+        int volume = super.getVolume();
 
         System.out.println("Calculated volume = " + volume);
 
